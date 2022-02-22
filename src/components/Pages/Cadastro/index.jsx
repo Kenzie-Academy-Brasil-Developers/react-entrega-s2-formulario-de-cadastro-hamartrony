@@ -22,10 +22,12 @@ function Cadastro (){
 
     const createUser = async (data) => {
         console.log(data)
+        localStorage.setItem('@EntregaForm:user', data.nome)
+        localStorage.setItem('@EntregaForm:senha', data.senha)
         history.push("")
-
-
     }
+
+
 
 
 
@@ -41,7 +43,7 @@ function Cadastro (){
             <input {...register('email')} placeholder="Email"/>
             <p>{errors.email?.message}</p>
 
-            <input {...register('senha')} placeholder="Senha"/>
+            <input {...register('senha')} placeholder="Senha" type='password'/>
             <p>{errors.senha?.message}</p>
 
             <input {...register('senhaConf')} placeholder="Confirme a senha" type='password'/>
